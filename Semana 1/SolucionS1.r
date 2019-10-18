@@ -14,7 +14,7 @@ help(rnorm)
 
 
 x <- 1:10
-(((x*2)+1)/1.5)**2 ´´
+(((x*2)+1)/1.5)**2 Â´Â´
 
 # Tome cualquier objeto anterior y preguntele la clase
 
@@ -27,7 +27,7 @@ prueba <- c(1, "perro", FALSE, "gato", 1.5)
 
 class(prueba)
 
-# Hasta el momento hemnos generado varios vectores/objetos/variables, 
+# Hasta el momento hemos generado varios vectores/objetos/variables, 
 #podemos listarlas usando la funcion ls() o ls.str(), la cual nos permite, 
 #no solo ver las variables, sino el tipo de cada una
 
