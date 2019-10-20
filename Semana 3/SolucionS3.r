@@ -1,7 +1,7 @@
 #EJERCICIOS SEMANA 3#
 
-#Si la columna iris$Petal.Length tuviera valores 'NA', ¿Cómo podría eliminarlos antes de hacer la estimación de la media?
-#Estime la media aritmética de la altura, la longitud y el ancho del caparazón de las tortugas pintadas [data(tortues), paquete: ade4]
+#Si la columna iris$Petal.Length tuviera valores 'NA', Â¿CÃ³mo podrÃ­a eliminarlos antes de hacer la estimaciÃ³n de la media?
+#Estime la media aritmÃ©tica de la altura, la longitud y el ancho del caparazÃ³n de las tortugas pintadas [data(tortues), paquete: ade4]
 data("iris")
 iris
 na.rm = TRUE #Para eliminar los 'NA'
@@ -12,7 +12,7 @@ z <- mean(tortues$haut)
 tabla_medias <- cbind(x,y,z)
 tabla_medias
 
-#Genere una función propia que le permita encontrar la mediana, tal y como lo hizo con la media aritmética.
+#Genere una funciÃ³n propia que le permita encontrar la mediana, tal y como lo hizo con la media aritmÃ©tica.
 setosa <- iris$Petal.Length[which(iris$Species=='setosa')]
   mi.mediana <- function(x) {
   
@@ -21,7 +21,7 @@ setosa <- iris$Petal.Length[which(iris$Species=='setosa')]
 }
 mi.mediana(setosa)
 
-#Genere una función propia que le permita calcular la moda
+#Genere una funciÃ³n propia que le permita calcular la moda
 mi.moda <- function(n) {
   
   x<- table(n)
@@ -30,20 +30,21 @@ mi.moda <- function(n) {
 }
 mi.moda(setosa)
 moda <- mi.moda(setosa)
-#Después de generar la función del cálculo de moda, grafíquela sobre el histograma.
-hist(setosa, col = "yellow", xlab = "Longitud de Pétalo", main = "Histograma LP Setosa", abline(v = 1.4, col = "royalblue",lwd = 2))
+#DespuÃ©s de generar la funciÃ³n del cÃ¡lculo de moda, grafÃ­quela sobre el histograma.
+hist(setosa, col = "yellow", xlab = "Longitud de PÃ©talo", main = "Histograma LP Setosa")
+abline(v = 1.4, col = "royalblue",lwd = 2)
      
 #Genere los cuantiles en intervalos de 0.5 
 quantile(setosa,probs = c(seq(0, 1, 0.5)))
 
-#¿Qué sucede si el número de columnas deseado no se especifica? Obtenga la mediana, la moda y los cuantiles para cada especie de iris y para cada variable morfométrica.
+#Â¿QuÃ© sucede si el nÃºmero de columnas deseado no se especifica? Obtenga la mediana, la moda y los cuantiles para cada especie de iris y para cada variable morfomÃ©trica.
 aggregate(iris[,1:4], list(Especies = iris$Species), mean)
 aggregate(iris[,1:4], list(Especies = iris$Species), median)
 aggregate(iris[,1:4], list(Especies = iris$Species), quantile)
 #si no se especifica columnas toma todo
 
-#Grafique la distribución de frecuencias de cada población usando histograma y densidad en el mismo gráfico. Adiciones la media, la mediana y la moda.
-#Estos estadísticos descriptivos pueden ser resumidos en una tabla usando la función describe(). Para más información podemos ir a ayuda para poder ver los parámetros de la función.
+#Grafique la distribuciÃ³n de frecuencias de cada poblaciÃ³n usando histograma y densidad en el mismo grÃ¡fico. Adiciones la media, la mediana y la moda.
+#Estos estadÃ­sticos descriptivos pueden ser resumidos en una tabla usando la funciÃ³n describe(). Para mÃ¡s informaciÃ³n podemos ir a ayuda para poder ver los parÃ¡metros de la funciÃ³n.
 pop1 <-abs(rnorm(200,mean = 6,sd = 1))
 pop2 <-abs(rnorm(200,mean = 6,sd = 5))
 pops<-cbind(pop1,pop2)
@@ -53,7 +54,7 @@ hist(pops[,1], freq = FALSE,
      border = "black", 
      prob = TRUE, 
      xlab = "Longitud de cola (cm)",
-     main = "Frecuencias de longitud de cola en pájaros P1")
+     main = "Frecuencias de longitud de cola en pÃ¡jaros P1")
 lines(density(pops[,1]),
       lwd = 2,
       col = "orange")
@@ -76,7 +77,7 @@ hist(pops[,2], freq = FALSE,
      border = "black", 
      prob = TRUE, 
      xlab = "Longitud de cola (cm)",
-     main = "Frecuencias de longitud de cola en pájaros P2")
+     main = "Frecuencias de longitud de cola en pÃ¡jaros P2")
 lines(density(pops[,2]),
       lwd = 2,
       col = "blue")
@@ -153,5 +154,5 @@ var(magund$W[which(magund$Traits=='I IV')])
 var(magund$W[which(magund$Traits=='II IV')])
 
 plot(magund$Traits, magund$A, xlab = "Poblaciones", ylab = "Valores", main = "Longitud del cuerpo", col = rainbow(4))
-plot(magund$Traits, magund$P, xlab = "Poblaciones", ylab = "Valores", main = "Tubérculos separados IB", col = rainbow(4))
+plot(magund$Traits, magund$P, xlab = "Poblaciones", ylab = "Valores", main = "TubÃ©rculos separados IB", col = rainbow(4))
 plot(magund$Traits, magund$W, xlab = "Poblaciones", ylab = "Valores", main = "Longitud del tarso I", col = rainbow(4))
